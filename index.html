@@ -3,80 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinity | Secure Access</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Infinity | Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assist/css/sty;e.css">
 </head>
 <body>
 
-    <div class="glow-orb"></div>
+    <div class="noise"></div>
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
 
-    <header>
-        <nav class="glass-nav">
+    <header id="navbar">
+        <nav aria-label="Main Navigation">
             <div class="logo">INFINITY<span>.</span></div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#work">Work</a></li>
-                <li><a href="#" class="active">Login</a></li>
+                <li><a href="#home" class="mag-link">Home</a></li>
+                <li><a href="#about" class="mag-link">About</a></li>
+                <li><a href="#projects" class="mag-link">Work</a></li>
+                <li><a href="login.html" class="mag-link">Login</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="login-page">
-        <section class="form-container">
-            <form id="loginForm" class="glass-card">
-                <h1>Welcome Back</h1>
-                <p class="subtitle">Enter your credentials to continue</p>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>DESIGNING<span>DIGITAL</span>EDGES</h1>
+                <p>Premium glassmorphism interfaces for the next generation of web apps.</p>
+            </div>
+        </section>
 
-                <div class="input-field">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Full Name" required>
+        <section id="about" class="section-padding">
+            <div class="feature-container">
+                <div class="feature-image">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Creative Work">
+                    <div class="image-glow"></div>
                 </div>
-
-                <div class="input-field">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="email@address.com" required>
+                <div class="feature-content">
+                    <span class="badge">Creative Logic</span>
+                    <h2>Crafting Modern <span>Experiences</span></h2>
+                    <p>Hum advanced logic aur high-end aesthetics ka use karte hain taaki aapka brand digital world mein sabse alag dikhe.</p>
+                    <ul class="feature-list">
+                        <li>✦ Clean Semantic HTML5</li>
+                        <li>✦ High-End CSS Effects</li>
+                        <li>✦ Fast Performance</li>
+                    </ul>
                 </div>
+            </div>
+        </section>
 
-                <div class="input-field">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="••••••••" required>
-                </div>
-
-                <button type="submit" class="submit-btn">Authorize</button>
-            </form>
+        <section id="projects" class="section-padding">
+            <div class="bento-grid">
+                <article class="bento-box box-wide"><h3>Architecture</h3></article>
+                <article class="bento-box box-tall"><h3>UI Design</h3></article>
+                <article class="bento-box box-standard"><h3>Development</h3></article>
+            </div>
         </section>
     </main>
 
     <footer class="glass-footer">
         <div class="footer-content">
-            <div class="footer-brand">
+            <div class="footer-section brand-area">
                 <div class="logo">INFINITY<span>.</span></div>
-                <p>Leading the digital edge.</p>
+                <p class="tagline">Leading the digital edge.</p>
                 <div class="app-icons">
-                    <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png" alt="App Store">
-                    <img src="https://cdn-icons-png.flaticon.com/512/888/888859.png" alt="Play Store">
+                    <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png" alt="Apple" class="footer-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5" class="footer-icon">
                 </div>
             </div>
 
-            <div class="footer-subscribe">
+            <div class="footer-section newsletter-area">
                 <h3>Newsletter</h3>
-                <div class="sub-box">
-                    <input type="email" placeholder="Your Email">
-                    <button>Subscribe</button>
-                </div>
+                <form class="sub-box" id="subscribeForm">
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
             </div>
 
-            <div class="footer-social">
+            <div class="footer-section socials-area">
                 <h3>Socials</h3>
-                <div class="social-links">
-                    <a href="#">YouTube</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">GitHub</a>
-                </div>
+                <ul class="social-list">
+                    <li><a href="#" class="mag-link">YouTube</a></li>
+                    <li><a href="#" class="mag-link">Instagram</a></li>
+                    <li><a href="#" class="mag-link">GitHub</a></li>
+                </ul>
             </div>
         </div>
-        <div class="copyright">
+        <div class="footer-legal">
             &copy; 2026 Infinity Creative. All Rights Reserved.
         </div>
     </footer>
