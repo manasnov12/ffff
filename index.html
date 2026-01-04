@@ -3,48 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinity | Join the Future</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Infinity | Secure Access</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assist/css/sty;e.css">
 </head>
 <body>
 
-    <div class="background-decor">
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>
+    <div class="glow-orb"></div>
 
-    <div class="login-container">
-        <form class="login-form" id="authForm">
-            <div class="form-header">
-                <h2>Create Account</h2>
-                <p class="subtitle">Join our elite network of digital architects.</p>
-            </div>
+    <header>
+        <nav class="glass-nav">
+            <div class="logo">INFINITY<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="#" class="active">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <div class="input-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" placeholder="John Doe" required>
-            </div>
+    <main class="login-page">
+        <section class="form-container">
+            <form id="loginForm" class="glass-card">
+                <h1>Welcome Back</h1>
+                <p class="subtitle">Enter your credentials to continue</p>
 
-            <div class="input-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="name@company.com" required>
-            </div>
+                <div class="input-field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Full Name" required>
+                </div>
 
-            <div class="input-group">
-                <label for="password">Password</label>
-                <div class="password-wrapper">
+                <div class="input-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="email@address.com" required>
+                </div>
+
+                <div class="input-field">
+                    <label for="password">Password</label>
                     <input type="password" id="password" placeholder="••••••••" required>
-                    <button type="button" id="togglePassword">Show</button>
+                </div>
+
+                <button type="submit" class="submit-btn">Authorize</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">INFINITY<span>.</span></div>
+                <p>Leading the digital edge.</p>
+                <div class="app-icons">
+                    <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png" alt="App Store">
+                    <img src="https://cdn-icons-png.flaticon.com/512/888/888859.png" alt="Play Store">
                 </div>
             </div>
 
-            <button type="submit" class="submit-btn">Get Started</button>
+            <div class="footer-subscribe">
+                <h3>Newsletter</h3>
+                <div class="sub-box">
+                    <input type="email" placeholder="Your Email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
 
-            <p class="footer-text">Already have an account? <a href="#">Log in</a></p>
-        </form>
-    </div>
+            <div class="footer-social">
+                <h3>Socials</h3>
+                <div class="social-links">
+                    <a href="#">YouTube</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Infinity Creative. All Rights Reserved.
+        </div>
+    </footer>
 
-    <script src="assist/js/"></script>
+    <script src="assist/js/script.js"></script>
 </body>
 </html>
