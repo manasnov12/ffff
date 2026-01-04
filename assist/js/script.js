@@ -1,60 +1,39 @@
-const dot = document.getElementById('cursor-dot');
-const outline = document.getElementById('cursor-outline');
-const nav = document.getElementById('main-nav');
+document.addEventListener('DOMContentLoaded', () => {
+    const authForm = document.getElementById('authForm');
+    const passwordInput = document.getElementById('password');
+    const togglePassword = document.getElementById('togglePassword');
 
-// 1. Custom Cursor Movement
-window.addEventListener('mousemove', (e) => {
-    const posX = e.clientX;
-    const posY = e.clientY;
+    // 1. Password Visibility Toggle
+    togglePassword.addEventListener('click', () => {
+        const isPassword = passwordInput.type === 'password';
+        passwordInput.type = isPassword ? 'text' : 'password';
+        togglePassword.textContent = isPassword ? 'Hide' : 'Show';
+    });
 
-    // Dot follows instantly
-    dot.style.left = `${posX}px`;
-    dot.style.top = `${posY}px`;
-
-    // Outline follows with a smooth animation
-    outline.animate({
-        left: `${posX}px`,
-        top: `${posY}px`
-    }, { duration: 500, fill: "forwards" });
-});
-
-// 2. Navbar Scroll Style
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-});
-
-// 3. Magnetic Interaction for Buttons & Links
-const magElements = document.querySelectorAll('.mag-btn, .mag-link');
-
-magElements.forEach(el => {
-    el.addEventListener('mousemove', (e) => {
-        const rect = el.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
+    // 2. Form Submission Handling
+    authForm.addEventListener('submit', (e) => {
+        e.preventDefault();
         
-        // Move element slightly toward cursor
-        el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-        // Expand cursor outline
-        outline.style.transform = `translate(-50%, -50%) scale(3)`;
-    });
+        const userData = {
+            name: document.getElementById('fullName').value,
+            email: document.getElementById('email').value,
+            password: passwordInput.value
+        };
 
-    el.addEventListener('mouseleave', () => {
-        el.style.transform = `translate(0px, 0px)`;
-        outline.style.transform = `translate(-50%, -50%) scale(1)`;
-    });
-});
+        console.log('Account Data:', userData);
 
-// 4. Bento Box 3D Parallax Effect
-document.addEventListener('mousemove', (e) => {
-    const boxes = document.querySelectorAll('.bento-box');
-    const x = (window.innerWidth / 2 - e.pageX) / 60;
-    const y = (window.innerHeight / 2 - e.pageY) / 60;
-    
-    boxes.forEach(box => {
-        box.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+        // Simple visual feedback on button
+        const btn = authForm.querySelector('.submit-btn');
+        const originalText = btn.textContent;
+        btn.textContent = 'Creating Account...';
+        btn.disabled = true;
+
+        setTimeout(() => {
+            alert(`Welcome, ${userData.name}! Your account has been created.`);
+            btn.textContent = originalText;
+            btn.disabled = false;
+            // Redirect to portfolio
+            // window.location.href = "index.html"; 
+        }, 1500);
     });
 });
